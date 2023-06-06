@@ -1,0 +1,16 @@
+(defun armstrong(n)
+        (setq len (length (write-to-string n)))
+        (setq num n sum 0)
+        (loop while (/= n 0) do
+            (setq digit (mod n 10))
+            (setq sum (+ sum (expt digit len)))
+            (setq n (floor n 10))
+        )
+        (if(= sum num) (format t "~a is an Armstrong Number" num)
+            (format t "~a is not an Armstrong Number" num)
+        )
+)
+
+(format t "Enter a number: ~%")
+(setq num (read))
+(armstrong num)
